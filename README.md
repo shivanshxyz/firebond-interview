@@ -1,3 +1,9 @@
+# Video Walkthrough
+
+https://github.com/shivanshxyz/firebond-interview/assets/24312840/6dbb781a-d875-4f39-974b-0a2618f6d602
+
+[https://www.youtube.com/watch?v=Dz3vQjH22jM](https://www.youtube.com/watch?v=Dz3vQjH22jM)
+
 # Instructions to install
 1. Create .env.local and insert your thirdweb client id as `NEXT_PUBLIC_THIRDWEB_CLIENT_ID=`
 2. `npm install`
