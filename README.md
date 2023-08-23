@@ -1,40 +1,51 @@
-## Getting Started
+# Instructions to install
+1. Create .env.local and insert your thirdweb client id as `NEXT_PUBLIC_THIRDWEB_CLIENT_ID=`
+2. `npm install`
+3. `npm run dev`
 
-Create a project using this example:
+- The application uses the mumbai testnet. Here are some faucets to get test MATIC:
+    - [https://faucet.polygon.technology/](https://faucet.polygon.technology/)
+    - [https://mumbaifaucet.com/](https://mumbaifaucet.com/)
 
-```bash
-npx thirdweb create --template next-javascript-starter
-```
+Deployed link - [https://firebond-interview.vercel.app/](https://firebond-interview.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Thoughts
+This was a very well rounded assignment I had to deploy, interact and read the smart contracts along with wallet handling and utilizing my frontend skills.
 
-On `pages/_app.js`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
+I took this assignment as a challenge to try to stick to the Firebond tech stack and used it as a learning opportunity since I never worked with Thirdweb previously
 
-## Environment Variables
+# Challenges Faced
+The main challenge that I faced was mainly due to a problem caused by the Thirdweb documentation error.
 
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
+In the React docs, it was mentioned that to deploy contracts, we have to utilise `ThirdwebSDKProvider` instead of `ThirdwebProvider`. I followed the documentation but I was not able to access the SDK functions. I was throwing all sorts of error and it wasted an entire day after trying all applying all sorts of fixes
 
-## Deploy to IPFS
+I escalated the issue with the Thirdweb support team on discord and even they were not able to fix it. By chance I bruteforced the `useSDK()` with `ThirdwebProvider` and I was sucessfully able to deploy it. The thirdweb team was also surprised and now they are fixing this issue now regarding `ThirdwebSDKProvider` not working
 
-Deploy a copy of your application to IPFS using the following command:
+### I would have completed this assignment a day earlier if it weren't for that error 🤯
 
-```bash
-yarn deploy
-```
+# Areas I focused on
 
-## Learn More
+- Tech Stack
+    - Next.js, Thirdweb, Tailwind
+    - I tried to use the exact tech stack used at Firebond because I wanted to use this assignment as a learning opportunity as well once I start working at Firebond
 
-To learn more about thirdweb and Next.js, take a look at the following resources:
+- Core Functionality
+    - I implemeted all the core functionality I was asked to
+    - /create
+        - Deploy custom ERC20 tokens ✅
+        - Set aside 100 tokens to be claimed ✅
+        - Each wallet cannot claim more than 5 tokens ✅
+    - /claim/[token_address]:
+        - Claim token button ✅
+        - fetch token info ✅
+        - display balance ✅
+        - show how many tokens have been claimed ✅
 
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb JavaScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Templates](https://thirdweb.com/templates)
+- Code Quality
+    - Used auto-formatting for clean code
+    - stored the API key into a seperate .env file to avoid accidental exposure
+    - Added well explained comments wherever required
 
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
+- UI
+    - Used tailwind to create and attractive and responsive UI out of the box
 
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
